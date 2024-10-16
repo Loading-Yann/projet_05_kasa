@@ -1,13 +1,16 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './Header.js';
+import Header from './components/Header.js';
+import Footer from './components/Footer.js';
+import KasaRouter from './components/KasaRouter.js';
+
+import './styles/App.scss';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Header />} />
-      </Routes>
-    </Router>
+    <div>
+      <Header />
+      <KasaRouter /> {/* Toutes les routes sont gérées ici */}
+      <Footer />
+    </div>
   );
 }
 
