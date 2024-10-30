@@ -2,12 +2,14 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center; // Ajouté pour centrer verticalement
   padding: 10px 20px;
   background-color: #f0f0f0;
 }
 
 .header__title {
   font-size: 1.5rem;
+  color: red;
 }
 
 .header__nav a {
@@ -17,6 +19,5 @@
 }
 
 .header__nav .active {
-  font-weight: bold;
-  color: #007bff;
+  text-decoration: underline;
 }
