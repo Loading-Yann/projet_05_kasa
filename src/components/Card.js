@@ -1,37 +1,59 @@
-// src/components/Card.js
 import React, { useState } from 'react';
 import './_Card.scss';
 
 function Card({ logement }) {
-  // Gère les états pour afficher ou non la description et les équipements
   const [showDescription, setShowDescription] = useState(false);
   const [showEquipments, setShowEquipments] = useState(false);
 
-  // Si le logement n'est pas défini, retourne null pour éviter les erreurs
-  if (!logement) return null;
+  const handleToggleDescription = () => setShowDescription(!showDescription);
+  const handleToggleEquipments = () => setShowEquipments(!showEquipments);
 
-  // Fonctions de bascule pour l'affichage de la description et des équipements
-  const toggleDescription = () => setShowDescription(!showDescription);
-  const toggleEquipments = () => setShowEquipments(!showEquipments);
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      stars.push(<span key={i} className={`star ${i <= rating ? 'filled' : ''}`}>&#9733;</span>);
+    }
+    return stars;
+  };
 
   return (
     <div className="card">
-      <img
-        src={logement.cover}
-        alt={logement.title}
-        className="card-cover"
-      />
+      <img src={logement.cover} alt={logement.title} className="card-cover" />
       <h2 className="card-title">{logement.title}</h2>
       <p className="card-location">{logement.location}</p>
-      <button onClick={toggleDescription}>Description</button>
-      {showDescription && <p>{logement.description}</p>}
-      <button onClick={toggleEquipments}>Équipements</button>
+      
+      <div className="card-tags">
+        {logement.tags.map((tag, index) => (
+          <span key={index} className="card-tag">{tag}</span>
+        ))}
+      </div>
+
+      <div className="card-rating">
+        {renderStars(parseInt(logement.rating))}
+        <div className="card-host">
+          <img src={logement.host.picture} alt={logement.host.name} className="host-picture" />
+          <span className="host-name">{logement.host.name}</span>
+        </div>
+      </div>
+
+      <button className="card-button" onClick={handleToggleDescription}>
+        {showDescription ? logement.description : 'Description'}
+        <span className="arrow">{showDescription ? '▲' : '▼'}</span>
+      </button>
+
+      {showDescription && <p className="card-description">{logement.description}</p>}
+
+      <button className="card-button" onClick={handleToggleEquipments}>
+        {showEquipments ? 'Équipements' : 'Afficher les équipements'}
+        <span className="arrow">{showEquipments ? '▲' : '▼'}</span>
+      </button>
+
       {showEquipments && (
-        <ul>
-          {logement.equipments.map((item, index) => (
-            <li key={index}>{item}</li>
+        <div className="card-equipments">
+          {logement.equipments.map((equipment, index) => (
+            <span key={index} className="equipment">{equipment}</span>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

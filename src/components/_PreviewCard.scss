@@ -1,0 +1,21 @@
+// src/components/_PreviewCard.scss
+
+.preview-card {
+  position: relative;
+  cursor: pointer; // Indique que c'est cliquable
+  overflow: hidden;
+}
+
+.preview-card-cover {
+  width: 100%;
+  height: auto;
+}
+
+.preview-card-title {
+  position: absolute; // Pour superposer le titre sur l'image
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 24px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); // Ombre pour améliorer la lisibilité
+}
