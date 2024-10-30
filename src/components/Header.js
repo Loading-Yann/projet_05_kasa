@@ -8,8 +8,8 @@ function Header() {
     <header className="header">
       <h1 className="header__title">Kasa</h1>
       <nav className="header__nav">
-      <NavLink to="/" exact="true">Accueil</NavLink>
-      <NavLink to="/a-propos" exact="true">À Propos</NavLink>
+        <NavLink to="/" exact="true">Accueil</NavLink>
+        <NavLink to="/apropos" exact="true">À Propos</NavLink> {/* Modifier ici */}
       </nav>
     </header>
   );

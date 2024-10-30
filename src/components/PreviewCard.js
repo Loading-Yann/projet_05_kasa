@@ -1,17 +1,18 @@
 // src/components/PreviewCard.js
 import React from 'react';
+import { Link } from 'react-router-dom'; // Importer Link pour la navigation
 import './_PreviewCard.scss';
 
-function PreviewCard({ logement, onClick }) {
+function PreviewCard({ logement }) {
   return (
-    <div className="preview-card" onClick={onClick}>
+    <Link to={`/logement/${logement.id}`} className="preview-card">
       <img
         src={logement.cover}
         alt={logement.title}
         className="preview-card-cover"
       />
       <h2 className="preview-card-title">{logement.title}</h2>
-    </div>
+    </Link>
   );
 }
 

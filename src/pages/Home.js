@@ -1,8 +1,6 @@
 // src/pages/Home.js
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Si tu prévois de naviguer avec des liens
 import './_Home.scss';
-import logements from '../data/logements.json';
 import PreviewCard from '../components/PreviewCard';
 
 function Home() {
@@ -18,12 +16,6 @@ function Home() {
       .catch((error) => console.error(error));
   }, []);
 
-  const handleCardClick = (logementId) => {
-    // Logique pour naviguer vers le détail du logement
-    // Utilise useHistory ou Link pour naviguer vers le détail
-    window.location.href = `/logement/${logementId}`; // Redirection basique (pas la meilleure pratique)
-  };
-
   return (
     <div className="home">
       <div className="home-banner">
@@ -37,11 +29,7 @@ function Home() {
 
       <div className="home-cards">
         {logements.map((logement) => (
-          <PreviewCard
-            key={logement.id}
-            logement={logement}
-            onClick={() => handleCardClick(logement.id)} // Appel de la fonction au clic
-          />
+          <PreviewCard key={logement.id} logement={logement} />
         ))}
       </div>
     </div>
