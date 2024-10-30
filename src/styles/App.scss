@@ -1,9 +1,12 @@
 // src/styles/App.scss
 .App {
   text-align: center;
-  font-family: Arial, sans-serif;
 }
+
 body {
-  margin: 0; /* Supprime les marges par défaut */
-  padding: 0; /* Supprime les remplissages par défaut */
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif; // Appliquer Montserrat à tout le corps
 }
+

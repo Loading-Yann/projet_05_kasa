@@ -1,0 +1,33 @@
+// src/pages/_Error.scss
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Remplit toute la hauteur de la fenêtre */
+  text-align: center;
+  background-color: #f8f8f8; /* Couleur de fond, change si besoin */
+
+  &__code {
+    font-size: 10rem; /* Taille du code d'erreur */
+    color: red; /* Couleur rouge pour le 404 */
+    margin: 0;
+  }
+
+  &__message {
+    font-size: 1.5rem; /* Taille du message d'erreur */
+    color: red; /* Couleur rouge pour le message */
+    margin: 1rem 0;
+  }
+
+  &__link {
+    font-size: 1rem; /* Taille du lien */
+    color: black; /* Couleur noire pour le lien */
+    text-decoration: none; /* Enlève le soulignement */
+    margin-top: 1rem;
+
+    &:hover {
+      text-decoration: underline; /* Ajoute un soulignement au survol */
+    }
+  }
+}
