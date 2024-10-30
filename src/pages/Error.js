@@ -1,13 +1,8 @@
-// Main
+// src/pages/Error.js
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-function Home() {
-  return (
-    <main>
-      <h1>Kasamain</h1>
-    </main>
-  );
+function Error() {
+  return <h2>Erreur : Page non trouvée</h2>;
 }
 
-export default Home;
+export default Error;

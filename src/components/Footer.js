@@ -1,10 +1,12 @@
+// src/components/Footer.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './_Footer.scss';
 
 function Footer() {
   return (
-    <footer>
-      <h1>Kasafooter</h1>
+    <footer className="footer">
+      <h2>Kasa</h2>
+      <p>© 2020 Kasa. All rights reserved.</p>
     </footer>
   );
 }

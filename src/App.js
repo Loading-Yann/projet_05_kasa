@@ -1,14 +1,15 @@
-import Header from './components/Header.js';
-import Footer from './components/Footer.js';
-import KasaRouter from './components/KasaRouter.js';
-
+// src/App.js
+import React from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import KasaRouter from './components/KasaRouter';
 import './styles/App.scss';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
-      <KasaRouter /> {/* Toutes les routes sont gérées ici */}
+      <KasaRouter />
       <Footer />
     </div>
   );
