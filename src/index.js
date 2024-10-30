@@ -1,23 +1,23 @@
 // src/index.js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client'; // Modifie cette ligne
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+// Crée une racine avec createRoot
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <Router>
       <App />
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Si tu veux mesurer la performance dans ton app, passe une fonction
+// pour enregistrer les résultats (par exemple : reportWebVitals(console.log))
+// ou envoie les à un endpoint d'analytics. En savoir plus : https://bit.ly/CRA-vitals
 reportWebVitals();

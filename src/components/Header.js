@@ -6,14 +6,10 @@ import './_Header.scss';
 function Header() {
   return (
     <header className="header">
-      <h1 className="header__title">titre kasa entête</h1>
+      <h1 className="header__title">Kasa</h1>
       <nav className="header__nav">
-        <NavLink exact to="/" activeClassName="active">
-          Accueil
-        </NavLink>
-        <NavLink to="/apropos" activeClassName="active">
-          À propos
-        </NavLink>
+      <NavLink to="/" exact="true">Accueil</NavLink>
+      <NavLink to="/a-propos" exact="true">À Propos</NavLink>
       </nav>
     </header>
   );
