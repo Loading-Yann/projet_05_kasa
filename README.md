@@ -1,3 +1,9 @@
+Pour lancer l'application et le server local en même temps, utiliser la commande 
+npm run dev 
+à la racine du projet
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
