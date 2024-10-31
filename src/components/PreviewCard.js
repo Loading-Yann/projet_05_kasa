@@ -1,6 +1,6 @@
 // src/components/PreviewCard.js
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importer Link pour la navigation
+import { Link } from 'react-router-dom';
 import './_PreviewCard.scss';
 
 function PreviewCard({ logement }) {

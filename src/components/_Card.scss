@@ -1,5 +1,42 @@
 @import '../styles/_variables.scss';
 
+.logement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  .carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .carousel-button {
+      background: none;
+      border: none;
+      color: #333;
+      font-size: 2rem;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+
+      &.left {
+        left: -50px;
+      }
+
+      &.right {
+        right: -50px;
+      }
+
+      &:hover {
+        color: #666;
+      }
+    }
+  }
+}
+
 .card {
   border-radius: 15px;
   background-color: white;
@@ -75,50 +112,6 @@
     }
   }
 
-  .card-button {
-    background-color: $color-red;
-    color: white;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1rem;
-
-    .arrow {
-      margin-left: 10px;
-    }
-
-    &:hover {
-      background-color: darken($color-red, 10%);
-    }
-  }
-
-  .card-description {
-    margin: 10px 0;
-    padding: 0 10px;
-    color: black;
-    font-size: 0.9rem;
-  }
-
-  .card-equipments {
-    margin: 10px 0;
-    display: flex;
-    flex-wrap: wrap;
-
-    .equipment {
-      background-color: #f0f0f0;
-      color: black;
-      border-radius: 30px;
-      padding: 10px;
-      margin: 5px;
-      font-size: 0.8rem;
-      text-align: center;
-    }
-  }
   .card-button {
     background-color: $color-red;
     color: white;
