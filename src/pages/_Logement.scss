@@ -1,1 +1,37 @@
-@import '../styles/_variables.scss';
+// src/pages/_Logement.scss
+.logement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  .carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .carousel-button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    &.left {
+      left: -50px; // Ajuste cette valeur pour l'espacement
+    }
+
+    &.right {
+      right: -50px; // Ajuste cette valeur pour l'espacement
+    }
+
+    &:hover {
+      color: #666;
+    }
+  }
+}

@@ -1,21 +1,51 @@
 // src/pages/Logement.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import logements from '../data/logements.json';
-import Card from '../components/Card'; // Importer le composant Card
+import Card from '../components/Card';
+import logementsData from '../data/logements.json';
+import { ICONS } from '../utils/config';
+import './_Logement.scss';
 
 function Logement() {
-  const { id } = useParams(); // Récupérer l'ID du logement depuis l'URL
-  const logement = logements.find((item) => item.id === id); // Trouver le logement correspondant
+  const { id } = useParams(); 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const initialIndex = logementsData.findIndex((logement) => logement.id === id);
+    if (initialIndex !== -1) {
+      setCurrentIndex(initialIndex);
+    }
+  }, [id]);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % logementsData.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      (prevIndex - 1 + logementsData.length) % logementsData.length
+    );
+  };
+
+  const logement = logementsData[currentIndex]; 
 
   if (!logement) {
-    return <div>Logement non trouvé</div>; // Message d'erreur si le logement n'est pas trouvé
+    return <div>Logement non trouvé</div>;
   }
 
   return (
-    <div>
-      {/* Utiliser le composant Card pour afficher les détails du logement */}
-      <Card logement={logement} />
+    <div className="logement">
+      <div className="carousel">
+        <button onClick={handlePrev} className="carousel-button left">
+          <i className={`fas ${ICONS.arrowLeft}`} />
+        </button>
+
+        <Card logement={logement} />
+
+        <button onClick={handleNext} className="carousel-button right">
+          <i className={`fas ${ICONS.arrowRight}`} />
+        </button>
+      </div>
     </div>
   );
 }
