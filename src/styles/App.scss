@@ -1,4 +1,7 @@
-// src/styles/App.scss
+@import './_variables.scss';
+@import './_mixins.scss';
+
+
 .App {
   text-align: center;
 }

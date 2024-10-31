@@ -1,9 +1,13 @@
 // src/components/_Footer.scss
+
+@import '../styles/_variables.scss';
+
+
 .footer {
   background-color: #000;
   color: #fff;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .footer h2 {
@@ -12,4 +16,16 @@
 
 .footer p {
   font-size: 0.9rem;
+}
+
+.apropos {
+  margin: 20px;
+}
+
+.apropos img {
+  border-radius: 15px;
+}
+
+.footer button:hover {
+  background-color: darken($color-red, 10%); // Assombrit le rouge au survol
 }

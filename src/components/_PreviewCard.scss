@@ -2,20 +2,24 @@
 
 .preview-card {
   position: relative;
-  cursor: pointer; // Indique que c'est cliquable
+  cursor: pointer; 
   overflow: hidden;
+  height: 100%;
 }
 
 .preview-card-cover {
   width: 100%;
-  height: auto;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: conver;
 }
 
 .preview-card-title {
-  position: absolute; // Pour superposer le titre sur l'image
-  bottom: 20px;
-  left: 20px;
+  position: absolute; 
+  bottom: 10px;
+  left: 10px;
   color: white;
-  font-size: 24px;
+  font-size: 14px;
+  text-align: left;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); // Ombre pour améliorer la lisibilité
 }
