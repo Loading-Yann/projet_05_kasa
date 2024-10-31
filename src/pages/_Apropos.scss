@@ -1,4 +1,3 @@
-
 @import '../styles/_variables.scss';
 
 .apropos {
@@ -39,13 +38,21 @@
       cursor: pointer;
       border: none;
       outline: none;
-
-      .arrow {
-        margin-left: 10px;
-      }
+      transition: background-color 0.2s ease;
 
       &:hover {
         background-color: #e0e0e0;
+      }
+
+      .arrow {
+        margin-left: 10px;
+        transition: transform 0.5s ease; // Durée de rotation
+        transform-origin: center; // Point d'origine de la rotation
+
+        // Appliquer la rotation en fonction de l'état
+        &.open {
+          transform: rotate(180deg); // Rotation de 180° pour flèche ouverte
+        }
       }
     }
 
