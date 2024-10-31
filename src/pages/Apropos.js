@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import './_Apropos.scss';
 import { aboutList } from '../data/aboutList';
-import { ICONS } from '../utils/config';
 
 function Apropos() {
   const [openIndexes, setOpenIndexes] = useState([]);
@@ -28,8 +27,8 @@ function Apropos() {
           <div key={index} className="apropos-item">
             <button className="apropos-button" onClick={() => handleToggle(index)}>
               {item.title}
-              <span className={`arrow ${openIndexes.includes(index) ? 'open' : ''}`}>
-                <i className={`fa-solid ${openIndexes.includes(index) ? ICONS.arrowUp : ICONS.arrowDown}`}></i>
+              <span className={`arrow ${openIndexes.includes(index) ? 'open' : 'closed'}`}>
+                <i className="fa-solid fa-chevron-down"></i>
               </span>
             </button>
 

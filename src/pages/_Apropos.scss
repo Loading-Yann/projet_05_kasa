@@ -46,12 +46,15 @@
 
       .arrow {
         margin-left: 10px;
-        transition: transform 0.5s ease; // Durée de rotation
-        transform-origin: center; // Point d'origine de la rotation
+        transition: transform 0.4s ease;
+        transform-origin: center;
+        
+        &.closed {
+          transform: rotate(0deg); // Flèche initialement vers le bas
+        }
 
-        // Appliquer la rotation en fonction de l'état
         &.open {
-          transform: rotate(180deg); // Rotation de 180° pour flèche ouverte
+          transform: rotate(180deg); // Flèche vers le haut en ouvrant
         }
       }
     }
