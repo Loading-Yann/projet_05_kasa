@@ -1,4 +1,6 @@
-// src/pages/_Error.scss
+@import '../styles/_variables.scss';
+
+
 .error {
   display: flex;
   flex-direction: column;
@@ -10,13 +12,13 @@
 
   &__code {
     font-size: 10rem; /* Taille du code d'erreur */
-    color: red; /* Couleur rouge pour le 404 */
+    color: $color-red; /* Couleur rouge pour le 404 */
     margin: 0;
   }
 
   &__message {
     font-size: 1.5rem; /* Taille du message d'erreur */
-    color: red; /* Couleur rouge pour le message */
+    color: $color-red; /* Couleur rouge pour le message */
     margin: 1rem 0;
   }
 
