@@ -1,5 +1,7 @@
+// src/components/Card.js
 import React, { useState } from 'react';
 import './_Card.scss';
+import { ICONS } from '../utils/config'; // Importer les icônes
 
 function Card({ logement }) {
   const [showDescription, setShowDescription] = useState(false);
@@ -36,18 +38,22 @@ function Card({ logement }) {
         </div>
       </div>
 
+      {/* Bouton Description */}
       <button className="card-button" onClick={handleToggleDescription}>
-        {showDescription ? logement.description : 'Description'}
-        <span className="arrow">{showDescription ? '▲' : '▼'}</span>
+        Description
+        <span className={`arrow ${showDescription ? 'open' : 'closed'}`}>
+          <i className={`fa-solid ${ICONS.arrowDown}`}></i>
+        </span>
       </button>
-
       {showDescription && <p className="card-description">{logement.description}</p>}
 
+      {/* Bouton Équipements */}
       <button className="card-button" onClick={handleToggleEquipments}>
-        {showEquipments ? 'Équipements' : 'Afficher les équipements'}
-        <span className="arrow">{showEquipments ? '▲' : '▼'}</span>
+        Équipements
+        <span className={`arrow ${showEquipments ? 'open' : 'closed'}`}>
+          <i className={`fa-solid ${ICONS.arrowDown}`}></i>
+        </span>
       </button>
-
       {showEquipments && (
         <div className="card-equipments">
           {logement.equipments.map((equipment, index) => (

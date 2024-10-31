@@ -118,4 +118,57 @@
       text-align: center;
     }
   }
+  .card-button {
+    background-color: $color-red;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+
+    .arrow {
+      margin-left: 10px;
+      transition: transform 0.4s ease;
+    }
+
+    .open {
+      transform: rotate(180deg);
+    }
+
+    .closed {
+      transform: rotate(0deg);
+    }
+
+    &:hover {
+      background-color: darken($color-red, 10%);
+    }
+  }
+
+  .card-description,
+  .card-equipments {
+    margin: 10px 0;
+    padding: 0 10px;
+    color: black;
+    font-size: 0.9rem;
+  }
+
+  .card-equipments {
+    display: flex;
+    flex-wrap: wrap;
+
+    .equipment {
+      background-color: #f0f0f0;
+      color: black;
+      border-radius: 30px;
+      padding: 10px;
+      margin: 5px;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
 }
