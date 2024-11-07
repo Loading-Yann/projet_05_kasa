@@ -22,42 +22,11 @@
   }
 
   .apropos-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
     overflow: hidden;
 
-    .apropos-button {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      background-color: $color-primary;
-      cursor: pointer;
-      border: none;
-      outline: none;
-      transition: background-color 0.2s ease;
-
-      &:hover {
-        background-color: #e0e0e0;
-      }
-
-      .arrow {
-        margin-left: 10px;
-        transition: transform 0.4s ease;
-        transform-origin: center;
-        
-        &.closed {
-          transform: rotate(0deg); // Flèche initialement vers le bas
-        }
-
-        &.open {
-          transform: rotate(180deg); // Flèche vers le haut en ouvrant
-        }
-      }
-    }
+    // Supprimer les bordures et le rayon d'arrondi
+    border: none;
+    border-radius: 0;
 
     .apropos-content-text {
       padding: 15px;

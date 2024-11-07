@@ -1,19 +1,10 @@
 // src/pages/Apropos.js
-import React, { useState } from 'react';
+import React from 'react';
 import './_Apropos.scss';
 import { aboutList } from '../data/aboutList';
+import Drawer from '../components/Drawer'; // Importer le composant Drawer
 
 function Apropos() {
-  const [openIndexes, setOpenIndexes] = useState([]);
-
-  const handleToggle = (index) => {
-    if (openIndexes.includes(index)) {
-      setOpenIndexes(openIndexes.filter((i) => i !== index));
-    } else {
-      setOpenIndexes([...openIndexes, index]);
-    }
-  };
-
   return (
     <div className="apropos">
       <img
@@ -25,16 +16,9 @@ function Apropos() {
       <div className="apropos-content">
         {aboutList.map((item, index) => (
           <div key={index} className="apropos-item">
-            <button className="apropos-button" onClick={() => handleToggle(index)}>
-              {item.title}
-              <span className={`arrow ${openIndexes.includes(index) ? 'open' : 'closed'}`}>
-                <i className="fa-solid fa-chevron-down"></i>
-              </span>
-            </button>
-
-            {openIndexes.includes(index) && (
+            <Drawer title={item.title}>
               <p className="apropos-content-text">{item.content}</p>
-            )}
+            </Drawer>
           </div>
         ))}
       </div>
