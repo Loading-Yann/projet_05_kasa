@@ -24,7 +24,10 @@ function Home() {
           alt="Bannière de la page d'accueil"
           className="home-banner-image"
         />
-        <h1 className="home-banner-text">Chez vous, <br /> partout et ailleurs</h1>
+        <h1 className="home-banner-text">
+          <span className="home-banner-text-line1">Chez vous,&nbsp;</span>
+          <span className="home-banner-text-line2">partout et ailleurs</span>
+        </h1>
       </div>
 
       <div className="home-cards">

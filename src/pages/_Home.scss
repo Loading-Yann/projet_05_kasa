@@ -1,5 +1,3 @@
-
-
 @import '../styles/_variables.scss';
 
 .home {
@@ -15,7 +13,6 @@
     height: 220px; 
     overflow: hidden;
 
-
     &::after {
       content: ""; 
       position: absolute;
@@ -26,8 +23,6 @@
       background-color: rgba(0, 0, 0, 0.7); 
       z-index: 1; 
       border-radius: 15px;
-
-
     }
 
     .home-banner-image {
@@ -45,26 +40,55 @@
       color: white;
       font-size: 2rem;
       font-weight: bold;
-      text-align: left; 
+      text-align: center; 
       line-height: 1.2;
       z-index: 2;
       padding-bottom: 50px;
 
+      // Par défaut, les deux parties sur la même ligne
+      display: block;
+
       @media (min-width: $breakpoint-tablet) {
         font-size: 2.5rem;
       }
-    
+
       @media (min-width: $breakpoint-desktop) {
         font-size: 3rem;
-        white-space: nowrap;
+        white-space: nowrap; // Une seule ligne sur desktop
+      }
+
+      // Partie "Chez vous"
+      .home-banner-text-line1 {
+        display: inline-block; // Utilisation de inline-block pour le texte sur une ligne
+      }
+      
+
+      // Partie "Partout et ailleurs"
+      .home-banner-text-line2 {
+        display: inline-block;
+      }
+
+      // Sur mobile, tout le texte est en deux lignes
+      @media (max-width: $breakpoint-mobile) {
+        .home-banner-text-line1, 
+        .home-banner-text-line2 {
+          display: block; // Chaque partie sur une ligne séparée
+        }
       }
     }
   }
 
   .home-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
+    justify-content: center;
+
+    .preview-card {
+      width: 30%;
+      min-width: 250px;
+      margin-bottom: 20px;
+    }
   }
 }
