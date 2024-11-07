@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/_variables.scss';
 import './_ArrowButton.scss';
-import { ICONS } from '../utils/config'; // Import de ICONS depuis config.js
+import { ICONS } from '../utils/config'; 
 
 function ArrowButton({ direction, onClick }) {
   return (

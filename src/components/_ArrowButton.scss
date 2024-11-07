@@ -1,6 +1,6 @@
 @import '../styles/_variables.scss';
 
-.arrow-button {
+.carousel-button {
   background: none;
   border: none;
   color: #333;
@@ -16,10 +16,15 @@
   }
 
   &.right {
-    right: -50px;
+    right: 20px;
   }
 
   &:hover {
     color: #666;
+  }
+  
+  .carousel-button i {
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
   }
 }

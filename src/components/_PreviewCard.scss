@@ -9,9 +9,9 @@
 
 .preview-card-cover {
   width: 100%;
-  height: 340px; // Imposer une hauteur fixe
+  height: 340px; 
   border-radius: 5px;
-  object-fit: cover; // Pour que l'image remplisse le cadre sans déformation
+  object-fit: cover; 
 }
 
 .preview-card-title {
@@ -21,5 +21,5 @@
   color: white;
   font-size: 14px;
   text-align: left;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); // Ombre pour améliorer la lisibilité
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
 }

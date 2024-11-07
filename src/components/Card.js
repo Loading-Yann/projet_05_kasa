@@ -1,4 +1,3 @@
-// src/components/Card.js
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './_Card.scss';
@@ -9,24 +8,24 @@ import logementsData from '../data/logements.json';
 
 function Card() {
   const { id } = useParams();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const initialIndex = logementsData.findIndex((logement) => logement.id === id);
     if (initialIndex !== -1) {
-      setCurrentIndex(initialIndex);
+      setCurrentImageIndex(0); // Réinitialiser l'index de l'image à 0 lorsqu'on change de logement
     }
   }, [id]);
 
-  const logement = logementsData[currentIndex];
+  const logement = logementsData.find((logement) => logement.id === id);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % logementsData.length);
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % logement.pictures.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      (prevIndex - 1 + logementsData.length) % logementsData.length
+    setCurrentImageIndex((prevIndex) =>
+      (prevIndex - 1 + logement.pictures.length) % logement.pictures.length
     );
   };
 
@@ -37,10 +36,16 @@ function Card() {
   return (
     <div className="logement">
       <div className="carousel">
-        <ArrowButton direction="left" onClick={handlePrev} />
-        
         <div className="card">
-          <img src={logement.cover} alt={logement.title} className="card-cover" />
+          <div className="card-image-container">
+            <img src={logement.pictures[currentImageIndex]} alt={`Logement - ${logement.title}`} className="card-image" />
+            <ArrowButton direction="left" onClick={handlePrev} className="carousel-button left" />
+            <ArrowButton direction="right" onClick={handleNext} className="carousel-button right" />
+            <div className="carousel-counter">
+              {currentImageIndex + 1} / {logement.pictures.length}
+            </div>
+          </div>
+
           <h2 className="card-title">{logement.title}</h2>
           <p className="card-location">{logement.location}</p>
 
@@ -63,15 +68,13 @@ function Card() {
           </Drawer>
           
           <Drawer title="Équipements">
-            <div className="equipments-list">
+            <ul className="equipments-list">
               {logement.equipments.map((equipment, index) => (
-                <span key={index} className="equipment">{equipment}</span>
+                <li key={index} className="equipment">{equipment}</li>
               ))}
-            </div>
+            </ul>
           </Drawer>
         </div>
-
-        <ArrowButton direction="right" onClick={handleNext} />
       </div>
     </div>
   );
