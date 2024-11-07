@@ -6,30 +6,30 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Remplit toute la hauteur de la fenêtre */
+  height: 100vh; 
   text-align: center;
-  background-color: #f8f8f8; /* Couleur de fond, change si besoin */
+  background-color: #f8f8f8;
 
   &__code {
-    font-size: 10rem; /* Taille du code d'erreur */
-    color: $color-red; /* Couleur rouge pour le 404 */
+    font-size: 10rem; 
+    color: $color-primary; 
     margin: 0;
   }
 
   &__message {
-    font-size: 1.5rem; /* Taille du message d'erreur */
-    color: $color-red; /* Couleur rouge pour le message */
+    font-size: 1.5rem; 
+    color: $color-primary; 
     margin: 1rem 0;
   }
 
   &__link {
     font-size: 1rem; /* Taille du lien */
-    color: black; /* Couleur noire pour le lien */
-    text-decoration: none; /* Enlève le soulignement */
+    color: black; 
+    text-decoration: none; 
     margin-top: 1rem;
 
     &:hover {
-      text-decoration: underline; /* Ajoute un soulignement au survol */
+      text-decoration: underline; 
     }
   }
 }

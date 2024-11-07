@@ -5,12 +5,15 @@
 
 .App {
   text-align: center;
+  max-width: 1440px;
 }
+
 
 body {
   margin: 0; 
   padding: 0; 
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif; // Appliquer Montserrat à tout le corps
+  font-family: 'Montserrat', sans-serif; 
+  max-width: 1440px ;
 }
 
