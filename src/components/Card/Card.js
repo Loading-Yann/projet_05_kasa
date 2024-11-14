@@ -42,7 +42,8 @@ function Card() {
             </div>
           </div>
         </div>
-
+        <div class="drawers">
+        
         <Drawer title="Description">
           <p>{logement.description}</p>
         </Drawer>
@@ -54,6 +55,7 @@ function Card() {
             ))}
           </ul>
         </Drawer>
+        </div>
       </div>
     </div>
   );

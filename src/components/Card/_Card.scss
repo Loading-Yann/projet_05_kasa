@@ -2,13 +2,13 @@
 
 .card-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
   padding: 20px;
 
   .card-info {
-    flex: 1;
     text-align: left;
     margin-right: 20px;
 
@@ -28,21 +28,28 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+
+    }
+    .card-tag {
+      border-radius: 15px;
+      padding : 5px 10px;
+      background-color: $color-primary;
     }
   }
 
   .card-host-container {
+    width: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: row;
     gap: 10px;
+    align-items: center;
+    justify-content: space-between;
 
-    .card-rating {
-      margin-right: auto;
-    }
 
     .card-host-info {
       display: flex;
       align-items: center;
+
       gap: 10px;
 
       .host-details {
@@ -61,15 +68,32 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media (min-width: $breakpoint-mobile) {
   .card-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 10px;
   }
 
   .card-host-container {
-    justify-content: space-between;
-    width: 100%;
+
+
+
+  }
+  .card-header .card-host-container {
+    flex-direction: column-reverse;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .drawers { 
+    display: flex;
+    flex: 1;
+    gap: 15px;
+    flex-direction: row;
+  }
+  drawer {
+    width: 45%;
   }
 }
