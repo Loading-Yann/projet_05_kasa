@@ -74,6 +74,7 @@
         .home-banner-text-line2 {
           display: block; // Chaque partie sur une ligne séparée
         }
+
       }
     }
   }
@@ -87,8 +88,13 @@
 
     .preview-card {
       width: 30%;
-      min-width: 250px;
       margin-bottom: 20px;
     }
+    @media (max-width: $breakpoint-mobile) {
+    .preview-card {
+      width: 80%;
+    }
   }
+  }
+
 }
