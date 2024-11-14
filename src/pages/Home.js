@@ -1,7 +1,8 @@
 // src/pages/Home.js
 import React, { useState, useEffect } from 'react';
 import './_Home.scss';
-import PreviewCard from '../components/PreviewCard';
+import { PreviewCard } from '../components';
+
 
 function Home() {
   const [logements, setLogements] = useState([]);

@@ -1,7 +1,7 @@
 // src/components/Footer.js
 import React from 'react';
 import './_Footer.scss';
-import logo from '../img/LOGO_noir.svg';
+import logo from '../../img/LOGO_noir.svg';
 
 function Footer() {
   return (

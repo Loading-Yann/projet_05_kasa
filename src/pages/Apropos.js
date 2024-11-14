@@ -2,7 +2,8 @@
 import React from 'react';
 import './_Apropos.scss';
 import { aboutList } from '../data/aboutList';
-import Drawer from '../components/Drawer'; // Importer le composant Drawer
+import { Drawer } from '../components';
+
 
 function Apropos() {
   return (

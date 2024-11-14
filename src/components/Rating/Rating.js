@@ -1,6 +1,6 @@
 // src/components/Rating.js
 import React from 'react';
-import '../styles/_variables.scss';
+import '../../styles/_variables.scss';
 import './_Rating.scss';
 
 function Rating({ rating }) {

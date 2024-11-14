@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Apropos from '../pages/Apropos';
 import Error from '../pages/Error';
-import Card from '../components/Card'; // Remplacer Logement par Card
+import { Card } from '../components'; 
 
 function KasaRouter() {
   return (

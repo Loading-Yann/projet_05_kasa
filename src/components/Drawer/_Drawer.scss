@@ -1,8 +1,8 @@
-@import '../styles/_variables.scss';
+@import '../../styles/_variables.scss';
 
 .drawer {
   margin: 10px 0;
-  max-width: 100%; 
+  width: 100%; 
   
   .drawer-button {
     background-color: $color-primary;
@@ -19,9 +19,10 @@
 
     .arrow {
       transition: transform 0.3s ease;
+      transform: rotate(180deg);
 
       &.open {
-        transform: rotate(180deg);
+        transform: rotate(0deg);
       }
 
       i {
@@ -39,8 +40,5 @@
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 5px;
-    max-width: 100%; 
-    word-wrap: break-word; 
-    overflow: hidden; 
   }
 }

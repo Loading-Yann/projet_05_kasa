@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ICONS } from '../utils/config';
-import '../styles/_variables.scss';
+import { ICONS } from '../../utils/config';
+import '../../styles/_variables.scss';
 import './_Drawer.scss';
 
 function Drawer({ title, children }) {

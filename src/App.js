@@ -1,8 +1,6 @@
 // src/App.js
 import React from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import KasaRouter from './components/KasaRouter';
+import { Header, Footer, KasaRouter } from './components';
 import './styles/App.scss';
 
 function App() {
