@@ -13,6 +13,11 @@
   color: $color-primary;
 }
 
+.header__nav {
+  display: flex;  
+  white-space: nowrap;  
+}
+
 .header__nav a {
   margin: 0 10px;
   text-decoration: none;
