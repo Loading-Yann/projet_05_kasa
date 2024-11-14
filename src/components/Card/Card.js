@@ -42,7 +42,7 @@ function Card() {
             </div>
           </div>
         </div>
-        <div class="drawers">
+        <div className="drawers">
         
         <Drawer title="Description">
           <p>{logement.description}</p>

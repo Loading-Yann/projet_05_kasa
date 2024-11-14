@@ -89,10 +89,12 @@
     .preview-card {
       width: 30%;
       margin-bottom: 20px;
+      display: flex;
+      justify-content: space-around;
     }
     @media (max-width: $breakpoint-mobile) {
     .preview-card {
-      width: 80%;
+      width: 100%;
     }
   }
   }
