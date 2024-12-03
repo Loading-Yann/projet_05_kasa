@@ -11,7 +11,7 @@ function KasaRouter() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/apropos" element={<Apropos />} />
-      <Route path="/logement/:id" element={<Card />} /> {/* Remplacer Logement par Card */}
+      <Route path="/logement/:id" element={<Card />} /> 
       <Route path="*" element={<Error />} />
     </Routes>
   );
