@@ -2,13 +2,13 @@ Pour lancer l'application et le server local en même temps, utiliser la command
 npm run dev 
 à la racine du projet
 
-Footer sans marge
-pas de compteur en mobile 
-pas de flèche quand il n'y a qu'une seule image
-la casse du header en mobile 
-loader à mettre quand ça charge la request
+faire que le Footer soit sans marge sur les côtés et qu'il soit en bas mais sans mettre une position absolue
+enlever le compteur en mobile 
+enlever les flèches du caroucel quand il n'y a qu'une seule image
+mettre en majuscule les menus de navigation et les passer en minuscule en desktop( avec la première lettre de chaque mot en majuscule)
+mettre un loader quand ça charge la request
 faire arrivée le texte des tiroirs doucement en 0.3s
-dossier pour chaque page
+
 
 
 

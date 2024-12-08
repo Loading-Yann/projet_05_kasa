@@ -1,7 +1,7 @@
 // src/components/KasaRouter.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/home/H';
+import Home from '../pages/home/Home';
 import Apropos from '../pages/apropos/Apropos';
 import Error from '../pages/error/Error';
 import { Card } from '../components'; 

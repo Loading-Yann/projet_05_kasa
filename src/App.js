@@ -8,11 +8,13 @@ function App() {
   return (
 
     <div className="App">
+      <div className="wrapper">
       <Header />
       <main>
       <KasaRouter />
       </main>
       <Footer />
+      </div>
     </div>
   );
 }
