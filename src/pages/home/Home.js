@@ -1,7 +1,7 @@
 // src/pages/Home.js
 import React, { useState, useEffect } from 'react';
 import './_Home.scss';
-import { PreviewCard } from '../components';
+import { PreviewCard } from '../../components';
 
 
 function Home() {
@@ -21,7 +21,7 @@ function Home() {
     <div className="home">
       <div className="home-banner">
         <img
-          src={require('../img/image_source1.jpeg')}
+          src={require('../../img/image_source1.jpeg')}
           alt="Bannière de la page d'accueil"
           className="home-banner-image"
         />

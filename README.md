@@ -2,6 +2,14 @@ Pour lancer l'application et le server local en même temps, utiliser la command
 npm run dev 
 à la racine du projet
 
+Footer sans marge
+pas de compteur en mobile 
+pas de flèche quand il n'y a qu'une seule image
+la casse du header en mobile 
+loader à mettre quand ça charge la request
+faire arrivée le texte des tiroirs doucement en 0.3s
+dossier pour chaque page
+
 
 
 # Getting Started with Create React App
@@ -74,3 +82,52 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+import React, { useState } from 'react';
+
+function SupprimerMalediction() {
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const supprimerMalediction = async () => {
+    setLoading(true);
+    setMessage('');
+    setError(null);
+
+    try {
+      // Simuler une requête à une API fictive pour supprimer une malédiction
+      const response = await fetch('https://api.univers.com/soutenance/malediction/YannJadeau', {
+        method: 'DELETE', // méthode DELETE pour supprimer
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Erreur lors de la suppression de la malédiction');
+      }
+
+      const data = await response.json();
+      setMessage(`La malédiction de l'id YannJadeau a été supprimée avec succès !`);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div>
+      <h1>Suppression de la malédiction</h1>
+      <button onClick={supprimerMalediction} disabled={loading}>
+        {loading ? 'Suppression en cours...' : 'Supprimer la malédiction'}
+      </button>
+
+      {message && <p style={{ color: 'green' }}>{message}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
+  );
+}
+
+export default SupprimerMalediction;

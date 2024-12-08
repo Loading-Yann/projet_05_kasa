@@ -1,15 +1,15 @@
 // src/pages/Apropos.js
 import React from 'react';
 import './_Apropos.scss';
-import { aboutList } from '../data/aboutList';
-import { Drawer } from '../components';
+import { aboutList } from '../../data/aboutList';
+import { Drawer } from '../../components';
 
 
 function Apropos() {
   return (
     <div className="apropos">
       <img
-        src={require('../img/image_source2.jpeg')}
+        src={require('../../img/image_source2.jpeg')}
         alt="Image de fond du footer"
         className="apropos-image"
       />
