@@ -16,7 +16,10 @@ function Drawer({ title, children }) {
           <i className={`fa-solid ${ICONS.arrowDown}`}></i>
         </span>
       </button>
-      {isOpen && <div className="drawer-content">{children}</div>}
+      {/* Ajout de la classe "open" conditionnellement */}
+      <div className={`drawer-content ${isOpen ? 'open' : ''}`}>
+        {children}
+      </div>
     </div>
   );
 }
