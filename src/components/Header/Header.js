@@ -10,7 +10,7 @@ function Header() {
       <h1 className="header__title"> <img src={logo} alt="KASA" /> </h1>
       <nav className="header__nav">
         <NavLink to="/" exact="true">Accueil</NavLink>
-        <NavLink to="/apropos" exact="true">À Propos</NavLink> {/* Modifier ici */}
+        <NavLink to="/apropos" exact="true">À Propos</NavLink> 
       </nav>
     </header>
   );

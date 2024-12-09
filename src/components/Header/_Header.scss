@@ -31,4 +31,20 @@
 .header__nav a:hover {
   text-decoration: underline;
 }
+/* Par défaut en majuscule pour mobile et tablette */
+@media (max-width: $breakpoint-tablet) {
+  .header__nav a {
+    text-transform: uppercase;
+  }
+}
 
+/* En desktop, mettre tout en minuscule avec la première lettre en majuscule */
+@media (min-width: $breakpoint-desktop) {
+  .header__nav a {
+    text-transform: lowercase;  // Met tout en minuscule
+  }
+
+  .header__nav a::first-letter {
+    text-transform: uppercase;  // Met la première lettre en majuscule
+  }
+}
