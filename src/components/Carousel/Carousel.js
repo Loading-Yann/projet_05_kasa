@@ -7,21 +7,11 @@ function Carousel({ logement }) {
   const { id } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Si aucun logement n'est trouvé, afficher un message
-  if (!logement) {
-    return <div>Logement non trouvé</div>;
-  }
+  // Vérifie le nombre d'images dans le logement
+  const hideArrows = logement.pictures.length <= 1;
 
-  // Gère le changement d'index pour les images
-  const handleNext = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % logement.pictures.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentImageIndex((prevIndex) =>
-      (prevIndex - 1 + logement.pictures.length) % logement.pictures.length
-    );
-  };
+  const handleNext = () => setCurrentImageIndex((prevIndex) => (prevIndex + 1) % logement.pictures.length);
+  const handlePrev = () => setCurrentImageIndex((prevIndex) => (prevIndex - 1 + logement.pictures.length) % logement.pictures.length);
 
   return (
     <div className="carousel">
@@ -31,8 +21,22 @@ function Carousel({ logement }) {
           alt={`Logement - ${logement.title}`}
           className="card-image"
         />
-        <ArrowButton direction="left" onClick={handlePrev} className="carousel-button left" />
-        <ArrowButton direction="right" onClick={handleNext} className="carousel-button right" />
+
+        {/* Conteneur de flèches avec la classe hide-arrow si nécessaire */}
+        <div className={`carousel-arrow left ${hideArrows ? 'hide-arrow' : ''}`}>
+          <ArrowButton
+            direction="left"
+            onClick={handlePrev}
+          />
+        </div>
+
+        <div className={`carousel-arrow right ${hideArrows ? 'hide-arrow' : ''}`}>
+          <ArrowButton
+            direction="right"
+            onClick={handleNext}
+          />
+        </div>
+
         <div className="carousel-counter">
           {currentImageIndex + 1} / {logement.pictures.length}
         </div>
