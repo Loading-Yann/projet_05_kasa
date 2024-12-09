@@ -41,23 +41,23 @@
     background-color: #f9f9f9;
     border-radius: 5px;
 
-    /* Masquer le contenu lorsque fermé */
+    
     max-height: 0;
     opacity: 0;
-    overflow: hidden; /* Assure que le contenu est masqué */
+    overflow: hidden; 
     transition: max-height 0.3s ease, opacity 0.3s ease;
 
-    /* Quand le tiroir est ouvert */
+    
     &.open {
-      max-height: 1000px; /* Une hauteur assez grande pour contenir le contenu */
-      opacity: 1; /* Rendre le contenu visible */
+      max-height: 1000px;
+      opacity: 1; 
     }
 
     p {
       text-align: justify;
     }
 
-    /* Liste d'équipements sans puces et alignée à gauche */
+    
     ul {
       list-style-type: none;
       padding-left: 0;
